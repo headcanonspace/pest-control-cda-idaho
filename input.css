@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "./assets/css/style.css";
+
+@theme {
+  --color-forest: #1b4332;
+  --color-forest-50: #f2f8f5;
+  --color-forest-100: #e2f0e8;
+  --color-forest-500: #2d6a4f;
+  --color-forest-900: #081c15;
+}

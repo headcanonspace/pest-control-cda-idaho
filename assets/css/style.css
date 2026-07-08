@@ -1,0 +1,66 @@
+/* assets/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  /* Slate 800 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom transitions and interactive elements */
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism utility */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Focus styles for accessibility */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #047857;
+  /* Emerald 700 */
+  outline-offset: 1px;
+}
+
+/* Highlight custom styling for footer disclaimer */
+.disclaimer-box {
+  border-left: 4px solid #b91c1c;
+  /* Red 700 */
+  background-color: #fef2f2;
+  /* Red 50 */
+}
+
+/* Custom accordion styles for sliding effect if needed */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content.active {
+  max-height: 500px;
+}
+
+/* Left border accent for list items */
+.border-l-3 {
+  border-left-width: 3px;
+}

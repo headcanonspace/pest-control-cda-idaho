@@ -1,0 +1,33 @@
+name: Deploy Website to cPanel via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🚀 Deploy to cPanel
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+      
+    - name: 📂 Sync files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /
+        timeout: 180000
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/.github*/**
+          server.js
+          fix_location_links.ps1
+          fix_location_links.py
+          PROJECT_OVERVIEW.md
+          design-rules.md
+          masterChanges.md
