@@ -106,12 +106,9 @@ This file contains the strict guidelines, coding practices, and content standard
 * **Prohibited Phrases**: You MUST NEVER use phrases like "Licensed & Insured", "Fast Response", "Same Day Service" (unless explicitly verified), "24 Hours Guaranteed", or "locally owned company" (which misrepresents the lead-gen structure).
 * **Required Alternatives**: You MUST use safe, accurate, and professional terminology such as "Easy Scheduling", "Trusted Experts", "Professional Service", "Local Providers", and "Targeted Treatments".
 
-### Rule 23: Compliant Testimonials and Reviews Sections
-* **Strict Guideline**: Any customer testimonial or reviews section MUST comply fully with lead-generation content standards and visual rules. Non-compliant review sections are STRICTLY PROHIBITED.
-* **Required Rules**:
-  - **No Rating Emojis**: You MUST always use clean, inline vector SVGs for rating stars. Text-based emojis (such as ⭐, 🌟) are STRICTLY PROHIBITED.
-  - **Local Neighborhood Context**: Customer names MUST be simplified (e.g. "Maria R.", "David K.") and MUST be accompanied by verified local neighborhood or landmark indicators (e.g. "Huntington Park - Middleton St") to establish localized authority.
-  - **Safe Copywriting**: Reviews MUST NEVER claim or imply prohibited guarantees. Focus copy strictly on compliant values like "professional service", "easy scheduling", "trusted specialists", and "targeted treatments".
+### Rule 23: Prohibition of Testimonials and Reviews Sections
+* **Strict Guideline**: Under no circumstances should customer testimonials, review sections, or star ratings be used anywhere on the entire website. The inclusion of review sections is STRICTLY PROHIBITED.
+* **Required Action**: You MUST NOT add, design, or implement any sections displaying user feedback, testimonials, or perceived customer reviews. All trust signals must be conveyed through factual business credentials, service guarantees, or professional copy rather than user reviews.
 
 ### Rule 24: Prohibition of Directory and Contractor Referral Branding
 * **Strict Guideline**: Under no circumstances should the website copy contain referral or directory phrases that imply the site is a connecting resource or directory matching users with external contractors. Referral-based copywriting is STRICTLY PROHIBITED.

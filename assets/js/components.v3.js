@@ -25,6 +25,7 @@ class GlobalHeader extends HTMLElement {
       </div>
       <!-- Right Info -->
       <div class="flex items-center gap-4">
+        <!-- Social Icons Commented Out
         <div class="hidden sm:flex items-center gap-4 text-slate-400">
           <a href="#" class="hover:text-amber-400 transition-colors" aria-label="Facebook">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -36,6 +37,7 @@ class GlobalHeader extends HTMLElement {
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
         </div>
+        -->
       </div>
     </div>
   </div>
@@ -45,16 +47,8 @@ class GlobalHeader extends HTMLElement {
   <header class="glass-effect sticky top-0 z-50 border-b border-slate-200/80 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="bg-forest p-2 rounded-lg text-white">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-extrabold text-xl tracking-tight text-forest leading-none">North Idaho</span>
-          <span class="text-xs uppercase tracking-widest text-slate-500 font-semibold mt-0.5">Pest Control</span>
-        </div>
+      <a href="/" class="flex items-center" style="height: 100%; display: flex; align-items: center;">
+        <img src="/assets/images/logo.png" alt="North Idaho Pest Control" style="height: 48px; width: auto; max-height: 48px; display: block;" loading="eager">
       </a>
 
       <!-- Desktop Navigation -->
@@ -206,14 +200,9 @@ class GlobalFooter extends HTMLElement {
         <div class="space-y-6">
           
           <!-- Logo -->
-          <div class="flex items-center gap-2 mb-2">
-            <div class="bg-forest p-1.5 rounded text-white">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <span class="font-extrabold text-xl text-white">North Idaho Pest Control</span>
-          </div>
+          <a href="/" class="inline-block mb-2" style="display: inline-block;">
+            <img src="/assets/images/logo-white.png" alt="North Idaho Pest Control" style="height: 48px; width: auto; max-height: 48px; display: block;" loading="lazy">
+          </a>
 
           <!-- Contact Details List -->
           <ul class="space-y-4 text-sm text-slate-400">
@@ -237,6 +226,7 @@ class GlobalFooter extends HTMLElement {
           </ul>
 
           <!-- Social Icons (Like the reference) -->
+          <!-- Social Icons Commented Out
           <div class="flex items-center gap-3 pt-2">
             <a href="#" class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:border-amber-400 hover:text-amber-400 transition-colors" aria-label="X (Twitter)">
               <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -251,6 +241,7 @@ class GlobalFooter extends HTMLElement {
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </a>
           </div>
+          -->
         </div>
 
         <!-- Services Column -->
@@ -266,7 +257,7 @@ class GlobalFooter extends HTMLElement {
           </ul>
         </div>
 
-        <!-- Locations Column -->
+        <!-- Locations Column Commented Out
         <div>
           <h4 class="font-bold text-white mb-4 uppercase tracking-widest text-xs border-b border-slate-800 pb-2">Coverage Areas</h4>
           <ul class="space-y-2 text-sm">
@@ -279,6 +270,7 @@ class GlobalFooter extends HTMLElement {
             <li><a href="/pest-control-spirit-lake" class="text-slate-400 hover:text-amber-400 transition-all duration-200 inline-block hover:translate-x-1">Spirit Lake, ID</a></li>
           </ul>
         </div>
+        -->
 
         <!-- Quick Links Column -->
         <div>

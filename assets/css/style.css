@@ -64,3 +64,8 @@ textarea:focus {
 .border-l-3 {
   border-left-width: 3px;
 }
+
+/* Background images for hero sections */
+.bg-wasp-hero {
+  background-image: url('../images/wasp-hero-bg.png');
+}
