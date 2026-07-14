@@ -2,6 +2,12 @@ Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
+# Explicit directory rewrites to prevent DirectorySlash listings
+RewriteRule ^services/?$ services.html [NC,L]
+RewriteRule ^locations/?$ locations.html [NC,L]
+RewriteRule ^blog/?$ blog.html [NC,L]
+
+
 # 1. Force clean URLs (redirect any direct .html requests to clean URLs)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
 RewriteRule ^ %1 [R=301,L]
