@@ -154,70 +154,70 @@ class GlobalHeader extends HTMLElement {
         <div class="t6-nav-panel" role="menu">
           <div class="t6-nav-panel-grid">
             <a href="${adjustLink('/services/ant-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="6" height="12" x="9" y="6" rx="3"/><path d="M19 8L15 10"/><path d="M5 8l4 2"/><path d="M19 16l-4-2"/><path d="M5 16l4-2"/><path d="M12 2v4"/><path d="M12 18v4"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Ant Control</span>
                 <span class="t6-nav-panel-desc">Our ant control service targets common species like carpenter ants. We use effective baits and insecticides to eliminate infestations in your home.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/carpenter-ant-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/><path d="M12 22V12M12 12H4M12 12h8"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Carpenter Ant Control</span>
                 <span class="t6-nav-panel-desc">Specializing in carpenter ant control, we identify nesting sites and apply targeted treatments to protect your property from structural damage.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/spider-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v6.5M12 15.5v6.5M2 12h6.5M15.5 12h6.5M5.3 5.3l4.7 4.7M14 14l4.7 4.7M5.3 18.7l4.7-4.7M14 10l4.7-4.7"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Spider Control</span>
                 <span class="t6-nav-panel-desc">Our spider control services focus on common species in Coeur d'Alene. We ensure your home is safe and free from these unwanted pests.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/flea-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Flea Control</span>
                 <span class="t6-nav-panel-desc">Flea infestations can be troublesome for pets and families. Our flea control service uses effective treatments to eliminate these pests from your home.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/roach-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="14" x="8" y="7" rx="4"/><path d="M6 3c2 2 2 5 2 7"/><path d="M18 3c-2 2-2 5-2 7"/><path d="M4 11h4M16 11h4M4 16h4M16 16h4"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Roach Control</span>
                 <span class="t6-nav-panel-desc">We provide thorough roach control services, targeting both adult roaches and their eggs. Our methods ensure a long-lasting solution for your home.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/bed-bug-treatment')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/><path d="M13 11v3M16 11v3M13 14h3" stroke-width="1.5"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Bed Bug Treatment</span>
                 <span class="t6-nav-panel-desc">Bed bugs can disrupt your peace. Our bed bug treatment includes inspection and targeted applications to eradicate them from your property.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/rodent-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a9 9 0 0 0 9-9c0-5-4-9-9-9s-9 4-9 9a9 9 0 0 0 9 9z"/><circle cx="8.5" cy="11.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="11.5" r="1.5" fill="currentColor"/><path d="M12 15l-1.5 2.5h3L12 15z" fill="currentColor"/><path d="M3.5 6.5C2 7.5 1.5 10 2 11.5M20.5 6.5C22 7.5 22.5 10 22 11.5"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Rodent Control</span>
                 <span class="t6-nav-panel-desc">Our rodent control services include trapping and exclusion methods to keep your home safe from mice and rats. We address entry points to prevent future infestations.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/wasp-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z"/><path d="M12 2v20M12 7l8.66 5M12 17l-8.66-5"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Wasp Control</span>
                 <span class="t6-nav-panel-desc">We safely remove wasp nests and provide preventative measures to keep your yard free from these stinging pests, ensuring your outdoor space is enjoyable.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/yellow-jacket-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Yellow Jacket Control</span>
                 <span class="t6-nav-panel-desc">Specializing in yellow jacket control, we handle aggressive nests to keep your property safe and secure.</span>
               </span>
             </a>
             <a href="${adjustLink('/services/mosquito-control')}" class="t6-nav-panel-item">
-              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="t6-nav-panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M12 12m-6 0a6 6 0 1 0 12 0 6 6 0 1 0-12 0"/></svg></span>
               <span class="t6-nav-panel-text">
                 <span class="t6-nav-panel-title">Mosquito Control</span>
                 <span class="t6-nav-panel-desc">Our mosquito control services use barrier sprays to protect your yard and family from dangerous bites and swarm interruptions.</span>
