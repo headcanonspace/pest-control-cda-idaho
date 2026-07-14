@@ -150,7 +150,7 @@ class GlobalHeader extends HTMLElement {
       <a href="${adjustLink('/')}" class="t6-nav-link">Home</a>
       <a href="${adjustLink('/about')}" class="t6-nav-link">About</a>
       <div class="t6-nav-dropdown">
-        <a href="${adjustLink('/services')}" class="t6-nav-link" aria-haspopup="true">Services <svg class="t6-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a href="javascript:void(0)" class="t6-nav-link" aria-haspopup="true">Services <svg class="t6-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="t6-nav-panel" role="menu">
           <div class="t6-nav-panel-grid">
             <a href="${adjustLink('/services/ant-control')}" class="t6-nav-panel-item">
@@ -228,7 +228,7 @@ class GlobalHeader extends HTMLElement {
         </div>
       </div>
       <div class="t6-nav-dropdown">
-        <a href="${adjustLink('/locations')}" class="t6-nav-link" aria-haspopup="true">Locations <svg class="t6-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a href="javascript:void(0)" class="t6-nav-link" aria-haspopup="true">Locations <svg class="t6-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="t6-nav-panel" role="menu">
           <div class="t6-nav-panel-grid">
             <a href="${adjustLink('/locations/pest-control-in-post-falls')}" class="t6-nav-panel-item">
@@ -280,8 +280,8 @@ class GlobalHeader extends HTMLElement {
       <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;font-family:var(--font-body);font-weight:500;font-size:1rem;">
         <li><a href="${adjustLink('/')}" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Home</a></li>
         <li><a href="${adjustLink('/about')}" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">About</a></li>
-        <li><a href="${adjustLink('/services')}" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Services</a></li>
-        <li><a href="${adjustLink('/locations')}" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Locations</a></li>
+        <li><a href="javascript:void(0)" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Services</a></li>
+        <li><a href="javascript:void(0)" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Locations</a></li>
         <li><a href="${adjustLink('/blog')}" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Blog</a></li>
         <li><a href="${adjustLink('/contact')}" style="color:#fff;text-decoration:none;display:block;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);">Contact</a></li>
       </ul>
