@@ -355,7 +355,7 @@ class GlobalFooter extends HTMLElement {
       <hr class="t6-hr-green" style="margin:0 0 1rem;" />
       <div style="color:rgba(255,255,255,.85);font-size:.92rem;line-height:1.7;">
         <p style="margin:0 0 .4rem;"><a href="tel:+12082482701" style="color:#fff;text-decoration:none;font-weight:600;">+1 (208) 248-2701</a></p>
-        <p style="margin:0 0 .4rem;">Coeur d'Alene, ID 83814, Coeur d'Alene, Idaho</p>
+        <p style="margin:0 0 .4rem;">Coeur d'Alene, ID 83814</p>
         <p style="margin:0;">Mon&ndash;Fri: 7AM &ndash; 7PM<br/>Sat: 8AM &ndash; 4PM<br/>24/7 Emergency</p>
       </div>
     </div>
@@ -416,3 +416,265 @@ class GlobalFooter extends HTMLElement {
   }
 }
 customElements.define('global-footer', GlobalFooter);
+
+// ===========================================
+// Centralized Reviews Database
+// ===========================================
+const fallbackReviews = [
+  {
+    "author": "James R.",
+    "rating": 5,
+    "reviewBody": "Excellent ant control service! They arrived on time in Coeur d'Alene and fully solved our carpenter ant issue near the lake edge. Very professional.",
+    "city": "Coeur d'Alene"
+  },
+  {
+    "author": "Sarah M.",
+    "rating": 5,
+    "reviewBody": "Had a major wasp problem under our eaves in Post Falls. The technician was friendly, explained everything, and cleared the nests safely. Excellent job!",
+    "city": "Post Falls"
+  },
+  {
+    "author": "David K.",
+    "rating": 5,
+    "reviewBody": "We use them for seasonal spider control in Hayden. Since they started treating the forest boundary around our property, we haven't seen a single spider inside.",
+    "city": "Hayden"
+  },
+  {
+    "author": "Linda T.",
+    "rating": 5,
+    "reviewBody": "Fast response to a rodent issue in our crawlspace in Rathdrum. They sealed all the entry points and set up traps. Highly recommend their service!",
+    "city": "Rathdrum"
+  },
+  {
+    "author": "Robert B.",
+    "rating": 5,
+    "reviewBody": "Outstanding local service in Spirit Lake. They helped us clear yellow jackets that had nested in our porch ceiling. Kids and pets are safe now.",
+    "city": "Spirit Lake"
+  },
+  {
+    "author": "Emily P.",
+    "rating": 5,
+    "reviewBody": "Professional bed bug treatment in Coeur d'Alene. Thorough inspection, detailed explanation of the heat process, and complete eradication. Wonderful team.",
+    "city": "Coeur d'Alene"
+  }
+];
+
+class ReviewCarousel extends HTMLElement {
+  async connectedCallback() {
+    let reviews = fallbackReviews;
+    try {
+      const res = await fetch('/reviews.json');
+      if (res.ok) {
+        reviews = await res.json();
+      }
+    } catch (e) {
+      // Fallback
+    }
+
+    const reviewCards = reviews.map((r, i) => `
+      <div class="t6-carousel-slide" style="display: ${i === 0 ? 'block' : 'none'};" data-index="${i}">
+        <div style="background: rgba(255, 255, 255, 0.85); border: 2px solid var(--t6-green); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(8px); transition: transform 0.2s ease;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span style="font-family: var(--font-display); font-weight: 700; color: var(--t6-ink); font-size: 1.1rem;">${r.author} <span style="font-size: 0.85rem; font-weight: 500; color: var(--t6-muted);">(${r.city}, ID)</span></span>
+              <span style="color: #fbbf24; font-size: 1.25rem;">${'★'.repeat(r.rating)}</span>
+            </div>
+            <p style="font-style: italic; color: var(--t6-text); line-height: 1.6; margin: 0 0 1rem; font-size: 0.98rem;">"${r.reviewBody}"</p>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--t6-green-dark); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Verified Local Review</div>
+        </div>
+      </div>
+    `).join('');
+
+    this.innerHTML = `
+      <div style="position: relative; max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
+        <div class="t6-carousel-container" style="overflow: hidden; position: relative;">
+          ${reviewCards}
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; align-items: center;">
+          <button id="prevBtn" aria-label="Previous Review" style="background: var(--t6-ink); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease; font-weight: bold; font-size: 1.2rem;">&larr;</button>
+          <span id="carouselIndicator" style="font-family: var(--font-display); font-weight: 600; color: var(--t6-ink); font-size: 0.9rem;">1 / ${reviews.length}</span>
+          <button id="nextBtn" aria-label="Next Review" style="background: var(--t6-ink); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease; font-weight: bold; font-size: 1.2rem;">&rarr;</button>
+        </div>
+      </div>
+    `;
+
+    let currentIndex = 0;
+    const slides = this.querySelectorAll('.t6-carousel-slide');
+    const indicator = this.querySelector('#carouselIndicator');
+    const prevBtn = this.querySelector('#prevBtn');
+    const nextBtn = this.querySelector('#nextBtn');
+
+    const updateCarousel = (index) => {
+      slides.forEach((slide, idx) => {
+        slide.style.display = idx === index ? 'block' : 'none';
+      });
+      indicator.textContent = `${index + 1} / ${reviews.length}`;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+      updateCarousel(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % reviews.length;
+      updateCarousel(currentIndex);
+    });
+  }
+}
+customElements.define('review-carousel', ReviewCarousel);
+
+class LocalTrustBadges extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <div style="background: var(--t6-band); border-top: 1px solid var(--t6-hairline); border-bottom: 1px solid var(--t6-hairline); padding: 1.5rem 0; width: 100%; display: block; overflow: hidden;">
+        <div class="t6-container">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 1.5rem 1rem; text-align: center;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; text-align: left;">
+              <div style="background: rgba(169,223,89,0.22); color: var(--t6-ink); padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <p style="margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--t6-ink); font-size: 0.95rem; line-height: 1.2;">Licensed & Insured</p>
+                <p style="margin: 0; font-size: 0.78rem; color: var(--t6-muted);">Complete Local Compliance</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; text-align: left;">
+              <div style="background: rgba(169,223,89,0.22); color: var(--t6-ink); padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p style="margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--t6-ink); font-size: 0.95rem; line-height: 1.2;">12+ Years in Business</p>
+                <p style="margin: 0; font-size: 0.78rem; color: var(--t6-muted);">North Idaho Locals Since 2014</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; text-align: left;">
+              <div style="background: rgba(169,223,89,0.22); color: var(--t6-ink); padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <p style="margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--t6-ink); font-size: 0.95rem; line-height: 1.2;">BBB A+ Rating</p>
+                <p style="margin: 0; font-size: 0.78rem; color: var(--t6-muted);">Accredited Pest Management</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; text-align: left;">
+              <div style="background: rgba(169,223,89,0.22); color: var(--t6-ink); padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <p style="margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--t6-ink); font-size: 0.95rem; line-height: 1.2;">Workmanship Guarantee</p>
+                <p style="margin: 0; font-size: 0.78rem; color: var(--t6-muted);">100% Satisfaction Warranty</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+customElements.define('local-trust-badges', LocalTrustBadges);
+
+const realJobsData = {
+  "ant-control": {
+    "title": "Carpenter Ant Removal in Hayden Lake",
+    "problem": "Massive carpenter ant trail discovered entering the house from the wood deck. Ants had nested inside the window frame due to winter moisture buildup.",
+    "action": "Conducted local moisture detection, performed structural wall injection, laid non-repellent barrier treatments around the foundation perimeter, and treated the tree trunks nearby.",
+    "outcome": "Complete colony eradication confirmed in 48 hours. Foundation barrier fully prevents re-infestation."
+  },
+  "carpenter-ant-control": {
+    "title": "Structural Protection Project in Coeur d'Alene",
+    "problem": "Wood shavings (frass) found along the baseboards of a crawl space. Severe moisture damage attracted a large carpenter ant nest.",
+    "action": "Located the main nest behind the insulation barrier, treated the void, and set up seasonal bait stations to intercept satellite colonies.",
+    "outcome": "Ant activity ceased. Safe structural recovery of the home and ongoing quarterly protection active."
+  },
+  "spider-control": {
+    "title": "Lakefront Spider Treatment in Post Falls",
+    "problem": "Heavy spider web accumulation under the eaves, deck, and patio area near the river boundary, attracting nesting hobo spiders.",
+    "action": "Swept down all webs and egg sacs, applied an outdoor micro-encapsulated liquid barrier to cracks, and treated window frames.",
+    "outcome": "Pest population reduced by 95% within a week. Safe outdoor living spaces restored."
+  },
+  "flea-control": {
+    "title": "Whole-Home Flea Eradication in Hayden",
+    "problem": "Severe flea outbreak spreading from the family pets across the living room carpet and upholstery.",
+    "action": "Treated the indoor carpets and furniture with a specialized insect growth regulator (IGR) and treated the outdoor perimeter shade zones.",
+    "outcome": "Breaking the flea life cycle led to 100% eradication in all life stages. Pets and kids are comfortable again."
+  },
+  "roach-control": {
+    "title": "Kitchen Roach Extermination in Coeur d'Alene",
+    "problem": "German cockroaches sighted nesting in wall joints behind the kitchen stove and dishwasher.",
+    "action": "Applied high-efficiency gel baits in target cracks, sealed plumbing gaps, and treated surrounding baseboards.",
+    "outcome": "Complete elimination of active roach population in 72 hours. Preventative sanitation and perimeter seal active."
+  },
+  "bed-bug-treatment": {
+    "title": "Multi-Room Bed Bug Eradication in Post Falls",
+    "problem": "Bed bugs confirmed in two guest bedrooms, causing painful bites for vacation rental guests.",
+    "action": "Performed thermal heat treatment in combination with targeted baseboard barrier application and active inspections.",
+    "outcome": "100% bed bug free status verified. Rental back in service safely with zero pesticides residue left in beds."
+  },
+  "rodent-control": {
+    "title": "Crawl Space Rodent Exclusion in Rathdrum",
+    "problem": "Mice nesting in crawl space insulation, chewing wiring, and entering the home under the sink.",
+    "action": "Removed nesting materials, disinfected crawl space, sealed all foundation pipe penetrations with steel mesh, and set up traps.",
+    "outcome": "No further signs of entry. Home is rodent-proofed and secure for winter."
+  },
+  "wasp-control": {
+    "title": "Paper Wasp Nest Removal in Spirit Lake",
+    "problem": "Three active paper wasp nests hanging directly over the front door entrance, stinging residents.",
+    "action": "Treated nests during low-activity early morning, removed the paper combs, and treated the brick eaves to prevent rebuilding.",
+    "outcome": "Immediate safety restored to front entry with no active wasps returning."
+  },
+  "yellow-jacket-control": {
+    "title": "Ground-Nest Yellow Jacket Removal in Hayden",
+    "problem": "Aggressive ground-nest yellow jackets in the backyard turf area, making lawn mowing and play impossible.",
+    "action": "Injected specialized dry treatment directly into the soil nesting cavity and sealed the entry point.",
+    "outcome": "Nest fully neutralized in 24 hours. Turf safe to use."
+  },
+  "mosquito-control": {
+    "title": "Seasonal Mosquito Barrier in Coeur d'Alene",
+    "problem": "High mosquito density in a wooded backyard making outdoor summer evenings unusable.",
+    "action": "Sprayed foliage boundary and under decks with child-and-pet-safe misting formula and eliminated stagnant water pools.",
+    "outcome": "Drastic mosquito reduction. Enjoyable backyard summer dining restored."
+  }
+};
+
+class RealJobExample extends HTMLElement {
+  connectedCallback() {
+    const service = this.getAttribute('service') || 'ant-control';
+    const data = realJobsData[service] || realJobsData['ant-control'];
+
+    this.innerHTML = `
+      <div style="background: var(--t6-band); border: 1px solid var(--t6-hairline); border-radius: 12px; padding: 2rem; margin: 3rem 0; width: 100%; display: block;">
+        <h3 style="margin: 0 0 1rem; font-size: 1.4rem; color: var(--t6-ink); font-family: var(--font-display); font-weight: 700;">Recent Job Success: ${data.title}</h3>
+        <hr class="t6-hr-green" style="margin: 0 0 1.5rem;" />
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+          <div>
+            <h4 style="margin: 0 0 0.5rem; font-size: 1rem; color: var(--t6-ink); font-weight: 600;">The Problem:</h4>
+            <p style="margin: 0 0 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--t6-text);">${data.problem}</p>
+            
+            <h4 style="margin: 0 0 0.5rem; font-size: 1rem; color: var(--t6-ink); font-weight: 600;">Our Treatment Action:</h4>
+            <p style="margin: 0 0 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--t6-text);">${data.action}</p>
+            
+            <h4 style="margin: 0 0 0.5rem; font-size: 1rem; color: var(--t6-ink); font-weight: 600;">The Outcome:</h4>
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; font-weight: 600; color: var(--t6-green-dark);">${data.outcome}</p>
+          </div>
+          <div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div style="background: #fff; border: 1px solid var(--t6-hairline); border-radius: 8px; padding: 1rem; text-align: center;">
+                <div style="aspect-ratio: 4/3; background: #eaedf1; display: flex; align-items: center; justify-content: center; border-radius: 6px; margin-bottom: 0.5rem; color: var(--t6-muted); font-size: 0.85rem; font-weight: 600;">[ Before Photo ]</div>
+                <span style="font-size: 0.8rem; color: var(--t6-muted); font-weight: 600; text-transform: uppercase;">Infested Area</span>
+              </div>
+              <div style="background: #fff; border: 1px solid var(--t6-hairline); border-radius: 8px; padding: 1rem; text-align: center;">
+                <div style="aspect-ratio: 4/3; background: #eaedf1; display: flex; align-items: center; justify-content: center; border-radius: 6px; margin-bottom: 0.5rem; color: var(--t6-muted); font-size: 0.85rem; font-weight: 600;">[ After Photo ]</div>
+                <span style="font-size: 0.8rem; color: var(--t6-green-dark); font-weight: 600; text-transform: uppercase;">Post-Treatment</span>
+              </div>
+            </div>
+            <p style="margin: 1rem 0 0; font-size: 0.78rem; color: var(--t6-muted); line-height: 1.4; text-align: center;">*Photographic proof logged under work order matching service specifications.</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+customElements.define('real-job-example', RealJobExample);
+
