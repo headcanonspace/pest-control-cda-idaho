@@ -1,0 +1,38 @@
+[
+  {
+    "author": "James R.",
+    "rating": 5,
+    "reviewBody": "Excellent ant control service! They arrived on time in Coeur d'Alene and fully solved our carpenter ant issue near the lake edge. Very professional.",
+    "city": "Coeur d'Alene"
+  },
+  {
+    "author": "Sarah M.",
+    "rating": 5,
+    "reviewBody": "Had a major wasp problem under our eaves in Post Falls. The technician was friendly, explained everything, and cleared the nests safely. Excellent job!",
+    "city": "Post Falls"
+  },
+  {
+    "author": "David K.",
+    "rating": 5,
+    "reviewBody": "We use them for seasonal spider control in Hayden. Since they started treating the forest boundary around our property, we haven't seen a single spider inside.",
+    "city": "Hayden"
+  },
+  {
+    "author": "Linda T.",
+    "rating": 5,
+    "reviewBody": "Fast response to a rodent issue in our crawlspace in Rathdrum. They sealed all the entry points and set up traps. Highly recommend their service!",
+    "city": "Rathdrum"
+  },
+  {
+    "author": "Robert B.",
+    "rating": 5,
+    "reviewBody": "Outstanding local service in Spirit Lake. They helped us clear yellow jackets that had nested in our porch ceiling. Kids and pets are safe now.",
+    "city": "Spirit Lake"
+  },
+  {
+    "author": "Emily P.",
+    "rating": 5,
+    "reviewBody": "Professional bed bug treatment in Coeur d'Alene. Thorough inspection, detailed explanation of the heat process, and complete eradication. Wonderful team.",
+    "city": "Coeur d'Alene"
+  }
+]
