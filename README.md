@@ -35,9 +35,11 @@ Official website for **North Idaho Pest Control**, providing local pest control 
 ---
 
 ## Deployment & Hosting
+- `.github/workflows/deploy.yml` - Automated GitHub Actions cPanel FTP deployment on push to `main` branch
 - `.htaccess` - Clean URL rewrites & caching for cPanel / Apache / LiteSpeed hosting
 - `_redirects` - Redirect rules for Netlify & Cloudflare Pages
 - `netlify.toml` - Netlify deployment configuration
 - `vercel.json` - Vercel clean URL & redirect configuration
 - `sitemap.xml` - XML sitemap listing all 24 canonical pages
-- `robots.txt` - Search engine crawler directives
+- `robots.txt` - Search engine crawler directives
+
