@@ -1,5 +1,3 @@
-﻿
-
 # North Idaho Pest Control
 
 Official website for **North Idaho Pest Control**, providing local pest control services for homes, businesses, and residential properties across Coeur d'Alene and North Idaho communities.
@@ -37,9 +35,9 @@ Official website for **North Idaho Pest Control**, providing local pest control 
 ---
 
 ## Deployment & Hosting
-- `.htaccess` - Clean URL rewrites for Apache / LiteSpeed servers
+- `.htaccess` - Clean URL rewrites & caching for cPanel / Apache / LiteSpeed hosting
 - `_redirects` - Redirect rules for Netlify & Cloudflare Pages
 - `netlify.toml` - Netlify deployment configuration
 - `vercel.json` - Vercel clean URL & redirect configuration
 - `sitemap.xml` - XML sitemap listing all 24 canonical pages
-- `robots.txt` - Search engine crawler directives
+- `robots.txt` - Search engine crawler directives
