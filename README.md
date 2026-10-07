@@ -6,7 +6,7 @@ Official website for **North Idaho Pest Control**, providing local pest control 
 
 - **Phone:** (208) 248-2701
 - **Email:** info@pestcontrolcoeurdalene.com
-- **Website:** https://pestcontrolcda.vercel.app
+- **Website:** https://northidahopestcontrol.com
 
 ---
 
