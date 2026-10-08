@@ -3,7 +3,6 @@
 Official website for **North Idaho Pest Control**, providing local pest control services for homes, businesses, and residential properties across Coeur d'Alene and North Idaho communities.
 
 - **Phone:** (208) 248-2701
-- **Email:** info@pestcontrolcoeurdalene.com
 - **Website:** https://northidahopestcontrol.com
 
 ---
